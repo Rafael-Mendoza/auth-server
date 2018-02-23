@@ -37,11 +37,10 @@ github:
 logging:
   level:
     org.springframework.security: DEBUG
-
-server:
- port: 8090
  
 spring:
   profiles:
     active: "dev"
+  server:
+    port: 8090
        
