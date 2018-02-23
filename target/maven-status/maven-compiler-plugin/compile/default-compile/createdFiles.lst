@@ -6,5 +6,4 @@ com/example/conf/ClientResources.class
 com/example/SocialApplication.class
 com/example/conf/DevDataSourceConfiguration.class
 com/example/conf/TestDataSourceConfiguration.class
-.netbeans_automatic_build
 com/example/conf/ResourceServerConfiguration.class
