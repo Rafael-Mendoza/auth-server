@@ -1,0 +1,47 @@
+security:
+  basic:
+      enabled: false
+#  oauth2:
+#    client:
+#      client-id: acme
+#      client-secret: acmesecret
+#      scope: read,write
+#      auto-approve-scopes: '.*'
+
+google:
+    client:
+      clientId: 417783227556-td9v0h6ulqau5hl05304080o974im2fv.apps.googleusercontent.com
+      clientSecret: OkZM0QY0d6d_z4gMMjwQWRYj
+      accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+      userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent
+      clientAuthenticationScheme: form
+      tokenName: oauth_token
+      authenticationScheme: query
+      scope:
+        - openid
+        - email
+        - profile
+    resource:
+      userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+
+github:
+  client:
+    clientId: bd1c0a783ccdd1c9b9e4
+    clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+    accessTokenUri: https://github.com/login/oauth/access_token
+    userAuthorizationUri: https://github.com/login/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://api.github.com/user
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+server:
+ port: 8090
+ 
+spring:
+  profiles:
+    active: "dev"
+       
