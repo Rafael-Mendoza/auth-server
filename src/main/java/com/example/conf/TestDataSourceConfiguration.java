@@ -22,7 +22,7 @@ public class TestDataSourceConfiguration {
     @Autowired
     private Environment environment;
 
-    @Value("classpath:schema.sql")
+    @Value("classpath:schema-postgre.sql")
     private Resource schemaScript;
 
     @Bean
