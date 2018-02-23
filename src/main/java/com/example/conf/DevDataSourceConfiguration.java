@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 @Configuration
 public class DevDataSourceConfiguration {
 
-    @Value("classpath:schema.sql")
+    @Value("classpath:mysql-schema.sql")
     private Resource schemaScript;
 
     @Bean
