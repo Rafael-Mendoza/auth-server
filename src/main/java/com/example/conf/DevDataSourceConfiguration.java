@@ -11,13 +11,20 @@ import org.springframework.jdbc.datasource.init.DataSourceInitializer;
 import org.springframework.jdbc.datasource.init.DatabasePopulator;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
+/**
+ * Data Source Configuration for 'dev' Profile.
+ * This configuration sets MySql as the default DataSource
+ * when the profile is set as 'dev'.
+ */
 @Profile("dev")
 @Configuration
 public class DevDataSourceConfiguration {
 
+    //Retrieves the mysql-schema from the resource folder.
     @Value("classpath:mysql-schema.sql")
     private Resource schemaScript;
 
+    //Initialize a DataSource and populates the database.
     @Bean
     public DataSourceInitializer dataSourceInitializer(DataSource dataSource) {
         DataSourceInitializer initializer = new DataSourceInitializer();
@@ -26,12 +33,14 @@ public class DevDataSourceConfiguration {
         return initializer;
     }
 
+    //Populates the database using the MySql Schema.
     private DatabasePopulator databasePopulator() {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
         populator.addScript(schemaScript);
         return populator;
     }
 
+    //Sets the DataSource using a MySql database.
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

@@ -1,12 +1,6 @@
 security:
   basic:
       enabled: false
-#  oauth2:
-#    client:
-#      client-id: acme
-#      client-secret: acmesecret
-#      scope: read,write
-#      auto-approve-scopes: '.*'
 
 google:
     client:
@@ -38,9 +32,12 @@ logging:
   level:
     org.springframework.security: DEBUG
  
+server:
+  port: 8090
+ 
 spring:
   profiles:
     active: "dev"
-#  server:
-#    port: 8090
+  server:
+    port: 8090
        

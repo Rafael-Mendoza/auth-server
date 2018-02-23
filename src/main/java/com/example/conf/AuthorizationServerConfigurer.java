@@ -24,12 +24,13 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     //Profiles: 'dev' for development with MySQL and 'test' for heroku postgree deployment.
     @Autowired
     private DataSource dataSource;
-
+    
+    //Configures the token store to use a JDBC source.
     @Bean
     public TokenStore tokenStore() {
         return new JdbcTokenStore(dataSource);
     }
-
+    
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints

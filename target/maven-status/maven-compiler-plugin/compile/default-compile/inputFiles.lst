@@ -4,5 +4,6 @@
 /home/rafael-a-mendoza/Projetos/auth-server/src/main/java/com/example/conf/AuthorizationServerConfigurer.java
 /home/rafael-a-mendoza/Projetos/auth-server/src/main/java/com/example/conf/TestDataSourceConfiguration.java
 /home/rafael-a-mendoza/Projetos/auth-server/src/main/java/com/example/conf/DevDataSourceConfiguration.java
+/home/rafael-a-mendoza/Projetos/auth-server/src/main/java/com/example/exceptions/Oauth2ExceptionHandler.java
 /home/rafael-a-mendoza/Projetos/auth-server/src/main/java/com/example/SocialApplication.java
 /home/rafael-a-mendoza/Projetos/auth-server/src/main/java/com/example/conf/ClientResources.java

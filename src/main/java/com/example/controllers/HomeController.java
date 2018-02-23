@@ -3,7 +3,6 @@ package com.example.controllers;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.context.annotation.Scope;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,9 @@ public class HomeController {
 
         principalMap.put("tokenValue", ((OAuth2AuthenticationDetails) principal.getDetails()).getTokenValue());
         principalMap.put("tokenType", ((OAuth2AuthenticationDetails) principal.getDetails()).getTokenType());
-
+        principalMap.put("principal", principal.getName());
+        principalMap.put("name", principal.getName());
+        
         return principalMap;
     }
 
@@ -29,9 +30,4 @@ public class HomeController {
         return principal;
     }
 
-    @RequestMapping("/token")
-    public Object usuarioToken(Authentication principal) {
-//      Map<String, Object> mapTokenInfo = new LinkedHashMap<>();
-        return ((OAuth2AuthenticationDetails) principal.getDetails()).getTokenValue();
-    }
 }
