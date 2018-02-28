@@ -11,10 +11,7 @@ google:
       clientAuthenticationScheme: form
       tokenName: oauth_token
       authenticationScheme: query
-      scope:
-        - openid
-        - email
-        - profile
+      scope: https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/user.birthday.read https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/analytics https://www.googleapis.com/auth/plus.login
     resource:
       userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
 

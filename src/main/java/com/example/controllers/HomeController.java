@@ -1,5 +1,8 @@
 package com.example.controllers;
 
+import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.context.annotation.Scope;
@@ -21,7 +24,7 @@ public class HomeController {
         principalMap.put("tokenType", ((OAuth2AuthenticationDetails) principal.getDetails()).getTokenType());
         principalMap.put("principal", principal.getName());
         principalMap.put("name", principal.getName());
-        
+
         return principalMap;
     }
 
@@ -30,4 +33,13 @@ public class HomeController {
         return principal;
     }
 
+    @RequestMapping("/teste")
+    public Object usuario(Principal principal) {
+        return principal;
+    }
+    
+    public void teste()
+    {
+        
+    }
 }

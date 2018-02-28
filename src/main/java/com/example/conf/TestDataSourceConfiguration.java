@@ -8,12 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.datasource.init.DataSourceInitializer;
-import org.springframework.jdbc.datasource.init.DatabasePopulator;
-import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 @Profile("test")
 @Configuration
@@ -21,22 +16,22 @@ public class TestDataSourceConfiguration {
 
     @Autowired
     private Environment environment;
-
-    private Resource schemaScriptProstgre = new ClassPathResource("postgre-schema.sql");
-
-    @Bean
-    public DataSourceInitializer dataSourceInitializer(DataSource dataSource) {
-        DataSourceInitializer initializer = new DataSourceInitializer();
-        initializer.setDataSource(dataSource);
-        initializer.setDatabasePopulator(databasePopulator());
-        return initializer;
-    }
-
-    private DatabasePopulator databasePopulator() {
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScript(schemaScriptProstgre);
-        return populator;
-    }
+      
+//    private Resource schemaScriptProstgre;
+//
+//    @Bean
+//    public DataSourceInitializer dataSourceInitializer(DataSource dataSource) {
+//        DataSourceInitializer initializer = new DataSourceInitializer();
+//        initializer.setDataSource(dataSource);
+//        initializer.setDatabasePopulator(databasePopulator());
+//        return initializer;
+//    }
+//
+//    private DatabasePopulator databasePopulator() {
+//        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+//        populator.addScript(schemaScriptProstgre);
+//        return populator;
+//    }
 
     @Bean
     public DataSource dataSource() throws URISyntaxException {

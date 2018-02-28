@@ -35,7 +35,8 @@ public class SecutiryConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .antMatcher("/**").authorizeRequests()
-                .antMatchers("/", "/index.html", "/login**", "/webjars/**").permitAll()
+                .antMatchers("/", "/index.html", "/login**", "/webjars/**", "/css/**", "/vendor/**",
+                        "/js/**", "/img/**").permitAll()
                 .anyRequest().authenticated()
                 .and().exceptionHandling()
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))

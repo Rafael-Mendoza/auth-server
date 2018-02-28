@@ -21,7 +21,7 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 public class DevDataSourceConfiguration {
 
     //Retrieves the mysql-schema from the resource folder.
-    @Value("classpath:mysql-schema.sql")
+    @Value("classpath:schema.sql")
     private Resource schemaScript;
 
     //Initialize a DataSource and populates the database.
